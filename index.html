@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>第一个jquery程序</title>
+    <script type="text/javascript" src="jquery-3.1.1.js"></script>
+    <script type="text/javascript" src="jquery-ui.js"></script>
+    <script type="text/javascript" src="datepicker.js"></script>
+    <script type="text/javascript" src="jquery.validate.js"></script>
+    <script type="text/javascript" src="jquery.form.js"></script>
+    <script type="text/javascript" src="jquery.cookie.js"></script>
+    <script type="text/javascript" src="ueditor/ueditor.config.js"></script>
+    <script type="text/javascript" src="ueditor/ueditor.all.js"></script>
+    <script src="demo.js"></script>
+    <link rel="stylesheet" href="jquery-ui.css">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div id="header">
+      <div class="header-main">
+        <h1>知问</h1>
+        <div class="header-search">
+          <input type="text" name="search" class="search">
+        </div>
+        <div class="header-button">
+          <button id="search_button">搜索</button>
+          <button id="question_button">提问</button>
+        </div>
+        <div class="header-register">
+          <a href="javascript:void(0)" id="reg_a">注册</a>
+          <a href="javascript:void(0)" id="number">用户</a>
+           |
+          <a href="javascript:void(0)" id="log_a">登录</a>
+          <a href="javascript:void(0)" id="logout">退出</a>
+        </div>
+      </div>
+    </div>
+    <div id="main">
+      <div class="main-left">
+        <div id="tabs">
+          <ul>
+            <li><a href="tab1.html">111</a></li>
+            <li><a href="tab2.html">2</a></li>
+            <li><a href="tab3.html">3</a></li>
+          </ul>
+        </div>
+        <div class="content">
+
+        </div>
+
+      </div>
+      <dvi class="main-right">
+        <div id="accordion">
+          <h1>菜单1</h1>
+          <div><p>内容1</p></div>
+          <h1>菜单2</h1>
+          <p>内容2</p>
+          <h1>菜单3</h1>
+          <p>内容3</p>
+        </div>
+      </dvi>
+    </div>
+
+
+
+
+
+    <!-- label 里的for="user"，和对应的input的id="user"，才能点汉字后鼠标直接到input里 -->
+    <form action="123.html" id="reg">
+      <ol class="reg-error"></ol>
+      <p>
+        <label for="user">账号:</label>
+        <input type="text" name="user" class="text" id="user"></input>
+        <span class="star">*</span>
+      </p>
+      <p>
+        <label for="pass">密码:</label>
+        <input type="password" name="pass" class="text" id="pass"></input>
+        <span class="star">*</span>
+      </p>
+      <p>
+        <label for="email">邮箱:</label>
+        <input type="text" name="email" class="text" id="email"></input>
+        <span class="star">*</span>
+      </p>
+      <p>
+        <label for="">性别:</label>
+        <input type="radio" name="sex" value="male" id="male"><label for="male">男</label></input>
+        <input type="radio" name="sex" value="female" id="female"><label for="female">女</label></input>
+      </p>
+      <p>
+        <label for="date">生日:</label>
+        <input type="text" name="birthday" id="date" class="text" readonly="readonly">
+      </p>
+    </form>
+
+    <div id="loading">数据交互中</div>
+    <div id="error">请登录后操作</div>
+
+    <form action="1111.html" id="log">
+      <ol class="log-error"></ol>
+      <p>
+        <label for="log_user">用户名:</label>
+        <input type="text" name="log_user" class="text" id="log_user"></input>
+        <span class="star">*</span>
+      </p>
+      <p>
+        <label for="log_pass">&emsp;密码:</label>
+        <input type="password" name="log_pass" class="text" id="log_pass"></input>
+        <span class="star">*</span>
+      </p>
+      <p class="week">
+        <label for="expires">登陆后有效期一周</label>
+      </p>
+      <p class="week-checkbox">
+        <input type="checkbox" name="expires" id="expires"/></input>
+      </p>
+    </form>
+
+    <form  title="提问" id="question">
+      <p>
+        <label for="title">问题名称:</label>
+        <input type="text" name="title" id="title" style="width:580px;">
+      </p>
+      <p>
+        <script id="editor" type="text/plain" name="test" style="width:650px;">请描述内容···</script>
+      </p>
+    </form>
+
+
+
+
+
+
+
+
+  </body>
+  <script type="text/javascript">
+
+       var ue = UE.getEditor('editor')
+
+  </script>
+</html>

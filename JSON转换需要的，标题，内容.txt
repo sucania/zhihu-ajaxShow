@@ -1,0 +1,28 @@
+//通过JS动态添加	  <h4>bnbbs 发表于 2017-1-17</h4>
+          		  <h3>日本女性结婚后多回归家庭，对社会发展来说是不是一种损失？</h3>
+          		  <div class="editor">
+          		     123
+        		  </div>
+        		  <div class="bottom">0条评论 <span class="down">显示全部</span><span class="up">收起</span> </div>
+        		  <hr noshade="noshade" size="1" />
+
+
+
+
+注意：这个只是对照着使用的
+ $.ajax({
+   'url':'show_content.php',
+   'type':'POST',
+   'success':function(response,status,xhr) {
+    //  alert(response);
+    // alert(typeof response) //打印出来的是字符串是不能用的
+    // alert($.parseJSON(response));   //转换格式，打印出对象数组，就可以用了
+    var json = $.parseJSON(response);   //response是 JSON 字符串, 必须将它转换为对象字面量
+    var html = '';   //变量html
+    $.each(json,function(index,value) {  //each()遍历很重要，也可以用for循环
+        html += '<h4>' + value.user + '发表于' + value.date + '</h4>' //+= 一次完成加法和赋值
+                + '<h3>' + value.title + '</h3>'
+                + '<div class="editor">' +  value.content + '</div>'
+                +'<div class="bottom">0条评论 <span class="down">显示全部</span><span class="up">收起</span></div><hr noshade="noshade" size="1" />';
+    })
+    $('.content').append(html);
